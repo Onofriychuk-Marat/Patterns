@@ -1,4 +1,4 @@
-// Паттерн СТРАТЕГИЯ определяет семейство алгоритмов, инкапсулируем
+// Патерн СТРАТЕГИЯ определяет семейство алгоритмов, инкапсулируем
 // каждый из них и обеспечивает их взаимозаменяемость.
 // Он позволяет модифицировать алгоритмы независимо от
 // их использования на стороне клиента.
@@ -12,9 +12,6 @@ public:
 
 class WriteCodeSwift : public WriteCode {
 public:
-    WriteCodeSwift() {}
-    ~WriteCodeSwift() {}
-
     virtual void write(void) {
         std::cout << "I am writing code in swift\n";
     }
@@ -22,9 +19,6 @@ public:
 
 class WriteCodeJavaScript : public WriteCode {
 public:
-    WriteCodeJavaScript() {}
-    ~WriteCodeJavaScript() {}
-
     virtual void write(void) {
         std::cout << "I am writing code in javascript\n";
     }
@@ -32,9 +26,6 @@ public:
 
 class WriteCodePython : public WriteCode {
 public:
-    WriteCodePython() {}
-    ~WriteCodePython() {}
-
     virtual void write(void) {
         std::cout << "I am writing code in python\n";
     }
@@ -45,7 +36,7 @@ protected:
     WriteCode *_writeCode;
 
 public:
-    Programmer() : _writeCode(new WriteCodeSwift()) {}
+    Programmer() {}
 
     ~Programmer() {
         free(_writeCode);
