@@ -5,7 +5,7 @@ class AutoNews {
     }
 
     setNews(next) {
-        this.news = text
+        this.news = next
         this.notifyAll()
     }
 
